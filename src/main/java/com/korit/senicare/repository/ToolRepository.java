@@ -3,11 +3,9 @@ package com.korit.senicare.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.korit.senicare.entity.NurseEntity;
+import com.korit.senicare.entity.ToolEntity;
 
 @Repository
-public interface NurseRepository extends JpaRepository<NurseEntity, String> {
+public interface ToolRepository extends JpaRepository<ToolEntity, Integer> {
     
-    boolean existsByUserId(String userId);
-
 }
