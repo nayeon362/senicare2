@@ -508,7 +508,7 @@ Content-Type: application/json;charset=UTF-8
   
 ##### 설명
 
-클라이언트는 OAuth 인증서버를 입력하여 요청하고 해당하는 Redirect 응답을 받습니다.  
+클라이언트는 OAuth 인증서버를 입력하여 요청하고 해당하는 Redirect 응답을 받습니다. 회원가입이 되어있는 사용자의 경우 쿼리 매개변수로 접근 토큰과 토큰 만료 기간을 반환하며 회원가입이 되어있지 않은 사용자의 경우 쿼리 매개변수로 sns 아이디와 해당하는 sns 서비스의 이름을 반환합니다. 
 
 - method : **GET**  
 - end point : **/sns-sign-in/{registerId}**  
