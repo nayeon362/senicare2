@@ -993,7 +993,7 @@ Content-Type: application/json;charset=UTF-8
 ###### Example
 
 ```bash
-curl -v -X PATCH "http://localhost:4000/api/v1/tool" \
+curl -v -X PATCH "http://localhost:4000/api/v1/tool/1" \
  -h "Authorization=Bearer XXXX" \
  -d "name=휠체어 대형" \
  -d "purpose=거동이 불편하신 분들을 위한 휠체어" \
