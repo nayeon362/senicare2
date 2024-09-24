@@ -1172,7 +1172,7 @@ Content-Type: application/json;charset=UTF-8
 
 ***
   
-<h2 style='background-color: rgba(55, 55, 55, 0.2); text-align: center'>Custom 모듈</h2>
+<h2 style='background-color: rgba(55, 55, 55, 0.2); text-align: center'>Customer 모듈</h2>
 
 Senicare 서비스의 고객과 관련된 REST API 모듈입니다.  
 고객 등록, 고객 리스트 보기, 고객 정보 보기, 고객 정보 수정, 고객 삭제 등의 API가 포함되어 있습니다.  
