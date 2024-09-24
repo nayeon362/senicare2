@@ -7,6 +7,6 @@ import com.korit.senicare.dto.response.ResponseDto;
 
 public interface CustomerService {
     
-    ResponseEntity<ResponseDto> postCustmoer(PostCustomerRequestDto dto);
+    ResponseEntity<ResponseDto> postCustomer(PostCustomerRequestDto dto);
 
 }

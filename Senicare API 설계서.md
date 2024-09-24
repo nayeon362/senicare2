@@ -565,6 +565,98 @@ Nurse 모듈은 모두 인증이 필요합니다.
 
 ***
 
+#### - 요양사 리스트 보기
+  
+##### 설명
+
+클라이언트는 요청 헤더에 Bearer 인증 토큰을 포함하여 요청하고 조회가 성공적으로 이루어지면 성공에 대한 응답을 받습니다. 네트워크 에러, 서버 에러, 인증 실패, 데이터베이스 에러가 발생할 수 있습니다.  
+
+- method : **GET**  
+- URL : **/**  
+
+##### Request
+
+###### Header
+
+| name | description | required |
+|---|:---:|:---:|
+| Authorization | Bearer 토큰 인증 헤더 | O |
+
+###### Example
+
+```bash
+curl -X GET "http://localhost:4000/api/v1/nurse" \
+ -h "Authorization=Bearer XXXX"
+```
+
+##### Response
+
+###### Header
+
+| name | description | required |
+|---|:---:|:---:|
+| Content-Type | 반환되는 Response Body의 Content type (application/json) | O |
+
+###### Response Body
+
+| name | type | description | required |
+|---|:---:|:---:|:---:|
+| code | String | 결과 코드 | O |
+| message | String | 결과 코드에 대한 설명 | O |
+| nurses | Nurse[] | 요양사 리스트 | O |
+  
+**Nurse**  
+| name | type | description | required |
+|---|:---:|:---:|:---:|
+| nurseId | String | 요양사 아이디 | O |
+| name | String | 요양사 이름 | O |
+| telNumber | String | 요양사 전화번호 | O |
+
+###### Example
+
+**응답 성공**
+```bash
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+{
+  "code": "SU",
+  "message": "Success.",
+  "nurses": [
+    {
+      "nurseId": "qwer1234",
+      "name": "홍길동",
+      "telNumber": "01011112222"
+    },
+    ...
+  ]
+}
+```
+
+**응답 : 실패 (인증 실패)**
+```bash
+HTTP/1.1 401 Unauthorized
+Content-Type: application/json;charset=UTF-8
+
+{
+  "code": "AF",
+  "message": "Authentication fail."
+}
+```
+
+**응답 실패 (데이터베이스 에러)**
+```bash
+HTTP/1.1 500 Internal Server Error
+Content-Type: application/json;charset=UTF-8
+
+{
+  "code": "DBE",
+  "message": "Database error."
+}
+```
+
+***
+
 #### - 로그인 유저 정보 확인
   
 ##### 설명
@@ -1213,7 +1305,7 @@ Tool 모듈은 모두 인증이 필요합니다.
 ###### Example
 
 ```bash
-curl -v -X POST "http://localhost:4000/api/v1/tool" \
+curl -v -X POST "http://localhost:4000/api/v1/customer" \
  -h "Authorization=Bearer XXXX" \
  -d "profileImage=https://~~" \
  -d "name=홍길동" \
