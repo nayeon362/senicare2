@@ -1947,8 +1947,8 @@ Content-Type: application/json;charset=UTF-8
 
 | name | type | description | required |
 |---|:---:|:---:|:---:|
-| contents | String | 내용 | X |
-| usedToolName | String | 사용 용품 이름 | X |
+| contents | String | 내용 | O |
+| usedToolNumber | Integer | 사용 용품 번호 | X |
 | count | String | 개수 | X |
 
 ###### Example
