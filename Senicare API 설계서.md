@@ -1527,7 +1527,7 @@ curl -X GET "http://localhost:4000/api/v1/customer" \
 | customerNumber | Integer | 고객 번호 | O |
 | name | String | 고객 이름 | O |
 | birth | String | 고객 생년월일 | O |
-| location | Integer | 지역 | O |
+| location | String | 지역 | O |
 | chargerName | String | 담당자 이름 | O |
 | chargerId | String | 담당자 아이디 | O |
 
