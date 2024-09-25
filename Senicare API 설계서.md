@@ -2092,8 +2092,8 @@ curl -X GET "http://localhost:4000/api/v1/customer/1/care-records" \
 | recordNumber | Integer | 관리 기록 번호 | O |
 | recordDate | String | 기록 날짜 | O |
 | contents | String | 내용 | O |
-| usedToolName | String | 사용된 용품 이름 | O |
-| count | String | 용품 사용 개수 | O |
+| usedToolName | String | 사용된 용품 이름 | X |
+| count | String | 용품 사용 개수 | X |
 
 ###### Example
 
